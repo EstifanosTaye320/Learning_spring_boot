@@ -1,0 +1,11 @@
+get http://localhost:8080/getproduct
+
+###
+post http://localhost:8080/addproduct
+Content-Type: application/json
+
+{
+    "name": "ted",
+    "price": "807",
+    "location": "hospital"
+}
