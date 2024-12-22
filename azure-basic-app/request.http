@@ -1,4 +1,7 @@
-get http://localhost:8080/getproduct
+get http://localhost:8080/getproduct/3
+
+###
+get http://localhost:8080/getproducts
 
 ###
 post http://localhost:8080/addproduct
@@ -9,3 +12,7 @@ Content-Type: application/json
     "price": "807",
     "location": "hospital"
 }
+
+###
+get http://localhost:8080/getPage
+Content-Type: text/html

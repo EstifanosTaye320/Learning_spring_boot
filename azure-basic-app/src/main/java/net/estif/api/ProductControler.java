@@ -3,19 +3,25 @@ package net.estif.api;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class HandleMethodsController {
+public class ProductControler {
 	
-	@GetMapping("/getproduct")
-	public Product getproduct() {
-		return new Product("nice", "20", "here");
+	@GetMapping("/getproduct/{id}")
+	public ResponseEntity<Product> getproduct(@PathVariable int id) {
+		if (id == 3) {
+			return ResponseEntity.ok(new Product("nice", "20", "here"));
+		} else {
+			return ResponseEntity.notFound().build();
+		}
 	}
 	
 	@GetMapping("/getproducts")
